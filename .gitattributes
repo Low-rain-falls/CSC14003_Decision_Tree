@@ -1,0 +1,19 @@
+# Normalize text files to LF
+* text=auto
+
+# Handle python code and notebooks as text
+*.py text
+*.ipynb text
+
+# Optional: Ignore Jupyter notebook output cells when diffing (cần thêm nbstripout)
+*.ipynb filter=strip-notebook-output
+
+# Treat data files as binary
+*.csv binary
+*.pkl binary
+*.h5  binary
+*.joblib binary
+*.model binary
+
+# Jupyter checkpoints
+.ipynb_checkpoints/ export-ignore
