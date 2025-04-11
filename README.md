@@ -15,7 +15,7 @@ The project involves data preparation, model training, performance evaluation, v
 1. [Project Structure](#project-structure)
 2. [Requirements](#requirements)
 3. [Setup Instructions](#setup-instructions)
-   - [Using Conda](#using-conda)
+   <!-- - [Using Conda](#using-conda) -->
    - [Using pip](#using-pip)
 4. [How to Run](#how-to-run)
 5. [Datasets](#datasets)
