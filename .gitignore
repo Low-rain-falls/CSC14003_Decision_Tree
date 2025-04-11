@@ -1,0 +1,65 @@
+docs.md
+
+# Ignore python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore config files
+*.env
+*.env.*
+
+# Ignore dataset or large files
+data/
+*.csv
+*.tsv
+*.xlsx
+*.zip
+*.tar.gz
+*.h5
+*.pkl
+*.joblib
+*.db
+
+# Ignore outputs
+*.log
+*.out
+
+# Ignore model files
+*.pt
+*.pth
+*.pb
+*.onnx
+*.ckpt
+
+# Ignore Jupyter Notebook output cache
+*.ipynb_checkpoints/
+
+# Ignore VSCode settings (optional)
+.vscode/
+
+# Ignore Jupyter runtime
+.jupyter/
+
+# Ignore experiment tracking files
+mlruns/
+wandb/
+
+# Ignore compiled files
+*.so
+
+# Ignore system files
+.idea/
