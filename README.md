@@ -147,21 +147,22 @@ The project requires **Python 3.8+** and the following libraries:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/[your-repo]/project2_decision_tree.git
-   cd project2_decision_tree
+   git clone https://github.com/Low-rain-falls/CSC14003_Decision_Tree.git
+   cd CSC14003_Decision_Tree
    ```
 
 2. **Activate the environment**:
    - Conda:
 
      ```bash
-     conda activate decision_tree
+     conda activate CSC14003_Decision_Tree
      ```
 
    - pip:
 
      ```bash
-     source decision_tree_env/bin/activate  # On Windows: decision_tree_env\Scripts\activate
+     python3 -m venv venv
+     source venv/bin/activate
      ```
 
 3. **Launch Jupyter Notebook**:
