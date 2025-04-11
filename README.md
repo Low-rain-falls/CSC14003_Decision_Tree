@@ -60,41 +60,42 @@ The project requires **Python 3.8+** and the following libraries:
 
 ## Setup Instructions
 
-### Using Conda
-
-1. **Install Anaconda or Miniconda**:
-   - Download from [Anaconda](https://www.anaconda.com/products/distribution) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
-   - Verify installation:
-
-     ```bash
-     conda --version
-     ```
-
-2. **Create a Conda environment**:
-
-   ```bash
-   conda create -n decision_tree python=3.9
-   ```
-
-3. **Activate the environment**:
-
-   ```bash
-   conda activate decision_tree
-   ```
-
-4. **Install dependencies**:
-
-   ```bash
-   conda install scikit-learn pandas matplotlib seaborn jupyter graphviz python-graphviz nbconvert
-   ```
-
-5. **Verify installation**:
-
-   ```bash
-   conda list
-   ```
-
-   Check for `scikit-learn`, `pandas`, `matplotlib`, `seaborn`, `graphviz`, `jupyter`, and `nbconvert`.
+<!-- ### Using Conda -->
+<!---->
+<!-- 1. **Install Anaconda or Miniconda**: -->
+<!--    - Download from [Anaconda](https://www.anaconda.com/products/distribution) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html). -->
+<!--    - Verify installation: -->
+<!---->
+<!--      ```bash -->
+<!--      conda --version -->
+<!--      ``` -->
+<!---->
+<!-- 2. **Create a Conda environment**: -->
+<!---->
+<!--    ```bash -->
+<!--    conda create -n decision_tree python=3.9 -->
+<!--    ``` -->
+<!---->
+<!-- 3. **Activate the environment**: -->
+<!---->
+<!--    ```bash -->
+<!--    conda activate decision_tree -->
+<!--    ``` -->
+<!---->
+<!-- 4. **Install dependencies**: -->
+<!---->
+<!--    ```bash -->
+<!--    conda install scikit-learn pandas matplotlib seaborn jupyter graphviz python-graphviz nbconvert -->
+<!--    ``` -->
+<!---->
+<!-- 5. **Verify installation**: -->
+<!---->
+<!--    ```bash -->
+<!--    conda list -->
+<!--    ``` -->
+<!---->
+<!--    Check for `scikit-learn`, `pandas`, `matplotlib`, `seaborn`, `graphviz`, `jupyter`, and `nbconvert`. -->
+<!---->
 
 ### Using pip
 
