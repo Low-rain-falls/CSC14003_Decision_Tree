@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 
 # Load dataset
-url = "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data"
+url = "CSC104003_Decision_Tree/Datasets/processed.cleveland.data"
 columns = [
     "age",
     "sex",
