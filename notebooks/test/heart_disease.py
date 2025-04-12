@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 
 # Load dataset
-url = "CSC104003_Decision_Tree/Datasets/processed.cleveland.data"
+url = "CSC14003_Decision_Tree/data/processed.cleveland.data"
 columns = [
     "age",
     "sex",
@@ -61,6 +61,7 @@ plt.figure(figsize=(20, 10))
 plot_tree(
     clf, feature_names=X.columns, class_names=["No Disease", "Disease"], filled=True
 )
+plt.title("Decision Tree of heart disease (Dataset 1)")
 plt.show()
 
 # Plot feature importance
@@ -68,4 +69,24 @@ feat_importances = pd.Series(clf.feature_importances_, index=X.columns)
 plt.figure(figsize=(10, 6))
 feat_importances.nlargest(10).plot(kind="barh")
 plt.title("Feature Importance")
+plt.show()
+
+# Analyze max depth
+train_accuracies = []
+test_accuracies = []
+depth_range = range(1, 15)
+
+for depth in depth_range:
+    model = DecisionTreeClassifier(max_depth=depth, random_state=42)
+    model.fit(X_train, y_train)
+    train_accuracies.append(model.score(X_train, y_train))
+    test_accuracies.append(model.score(X_test, y_test))
+
+plt.figure()
+plt.plot(depth_range, train_accuracies, label="Train Accuracy", marker="o")
+plt.plot(depth_range, test_accuracies, label="Test Accuracy", marker="o")
+plt.xlabel("max_depth")
+plt.ylabel("Accuracy")
+plt.legend()
+plt.title("Effect of max_depth on Accuracy")
 plt.show()
