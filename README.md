@@ -152,11 +152,11 @@ The project requires **Python 3.8+** and the following libraries:
    ```
 
 2. **Activate the environment**:
-   - Conda:
-
-     ```bash
-     conda activate CSC14003_Decision_Tree
-     ```
+   <!-- - Conda: -->
+   <!---->
+   <!--   ```bash -->
+   <!--   conda activate CSC14003_Decision_Tree -->
+   <!--   ``` -->
 
    - pip:
 
