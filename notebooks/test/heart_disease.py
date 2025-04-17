@@ -2,8 +2,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-from sklearn.metrics import (accuracy_score, classification_report,
-                             confusion_matrix, ConfusionMatrixDisplay)
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+    ConfusionMatrixDisplay,
+)
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 
@@ -56,7 +60,12 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Classification Report:\n", classification_report(y_test, y_pred))
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 disp = ConfusionMatrixDisplay.from_estimator(
-    clf, X_test, y_test, display_labels=["No Disease", "Disease"], cmap=plt.cm.Blues, normalize=None
+    clf,
+    X_test,
+    y_test,
+    display_labels=["No Disease", "Disease"],
+    cmap=plt.cm.Blues,
+    normalize=None,
 )
 plt.title("Confusion Matrix")
 plt.show()

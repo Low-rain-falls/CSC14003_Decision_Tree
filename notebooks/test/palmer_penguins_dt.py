@@ -1,8 +1,12 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-from sklearn.metrics import (accuracy_score, classification_report,
-                             confusion_matrix, ConfusionMatrixDisplay)
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+    ConfusionMatrixDisplay,
+)
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 
@@ -15,7 +19,9 @@ df = pd.read_csv(url)
 df = df.dropna()
 
 # Convert species to binary: 0 - Adelie, 1 - Gentoo, 2 - Chinstrap
-df['species'] = df["species"].apply(lambda x: 0 if x == "Adelie" else (1 if x == "Gentoo" else 2))
+df["species"] = df["species"].apply(
+    lambda x: 0 if x == "Adelie" else (1 if x == "Gentoo" else 2)
+)
 
 # Feature selection
 X = df.drop("species", axis=1)
@@ -41,14 +47,24 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Classification Report:\n", classification_report(y_test, y_pred))
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 disp = ConfusionMatrixDisplay.from_estimator(
-    clf, X_test, y_test, display_labels=["Adelie", "Gentoo", "Chinstrap"], cmap=plt.cm.Blues, normalize=None
+    clf,
+    X_test,
+    y_test,
+    display_labels=["Adelie", "Gentoo", "Chinstrap"],
+    cmap=plt.cm.Blues,
+    normalize=None,
 )
 plt.title("Confusion Matrix")
 plt.show()
 
 # Plot Decision Tree
 plt.figure(figsize=(20, 10))
-plot_tree(clf, feature_names=X.columns, class_names=["Adelie", "Gentoo", "Chinstrap"], filled=True)
+plot_tree(
+    clf,
+    feature_names=X.columns,
+    class_names=["Adelie", "Gentoo", "Chinstrap"],
+    filled=True,
+)
 plt.title("Decision Tree of Palmer Penguins (Dataset 2)")
 plt.show()
 
