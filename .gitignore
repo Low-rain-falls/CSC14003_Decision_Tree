@@ -23,8 +23,6 @@ Thumbs.db
 *.env.*
 
 # Ignore dataset or large files
-data/
-*.csv
 *.tsv
 *.xlsx
 *.zip

@@ -1,26 +1,38 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+    ConfusionMatrixDisplay,
+)
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 
 # Load dataset
-df = sns.load_dataset("penguins")
+url = "CSC14003_Decision_Tree/data/penguins.csv"
+df = pd.read_csv(url)
+# df = sns.load_dataset("penguins")
 
 # Drop rows with missing values
 df = df.dropna()
 
+# Convert species to binary: 0 - Adelie, 1 - Gentoo, 2 - Chinstrap
+df["species"] = df["species"].apply(
+    lambda x: 0 if x == "Adelie" else (1 if x == "Gentoo" else 2)
+)
+
 # Feature selection
-X = df.drop(columns=["species"])
+X = df.drop("species", axis=1)
 y = df["species"]
 
 # Convert categorical features
 X = pd.get_dummies(X)
 
-# Split data
+# Train test split
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42, stratify=y
+    X, y, test_size=0.2, random_state=42
 )
 
 # Train Decision Tree
@@ -34,11 +46,33 @@ y_pred = clf.predict(X_test)
 print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Classification Report:\n", classification_report(y_test, y_pred))
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+disp = ConfusionMatrixDisplay.from_estimator(
+    clf,
+    X_test,
+    y_test,
+    display_labels=["Adelie", "Gentoo", "Chinstrap"],
+    cmap=plt.cm.Blues,
+    normalize=None,
+)
+plt.title("Confusion Matrix")
+plt.show()
 
 # Plot Decision Tree
 plt.figure(figsize=(20, 10))
-plot_tree(clf, feature_names=X.columns, class_names=clf.classes_, filled=True)
-plt.title("Decision Tree - Palmer Penguins")
+plot_tree(
+    clf,
+    feature_names=X.columns,
+    class_names=["Adelie", "Gentoo", "Chinstrap"],
+    filled=True,
+)
+plt.title("Decision Tree of Palmer Penguins (Dataset 2)")
+plt.show()
+
+# Plot feature importance
+feat_importances = pd.Series(clf.feature_importances_, index=X.columns)
+plt.figure(figsize=(10, 6))
+feat_importances.nlargest(10).plot(kind="barh")
+plt.title("Feature Importance")
 plt.show()
 
 # Analyze max_depth
