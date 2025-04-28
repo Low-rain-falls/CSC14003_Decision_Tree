@@ -224,8 +224,6 @@ The project requires **Python 3.8+** and the following libraries:
 
 This project is for educational purposes only. Datasets are used under their respective public licenses.
 
----
-
 <!-- ### Changes Made -->
 <!---->
 <!-- - **Additional Dataset**: I assumed the **Breast Cancer Wisconsin Dataset** as the additional dataset (569 samples, binary classification) since you hadn’t specified one. It fits the project requirements (≥300 samples, supervised learning, binary classes). If you prefer another dataset (e.g., Wine, Iris, or Titanic), let me know, and I’ll update it. -->
